@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios'
+import {Button} from 'reactstrap';
+
 class Item extends Component {
     constructor() {
         super() 
@@ -18,14 +20,15 @@ axios.get(`https://newsapi.org/v2/top-headlines?sources=google-news&apiKey=38958
     
 
     render() {
-console.log(this.state.articles);
-      var article = this.state.articles.map((elm) => {
+
+      const article = this.state.articles.map((elm) => {
           
         return ( <div>
-        <p>
+        <article>
         {elm.title}
-        </p>
-        {console.log(elm.title)}
+        </article>
+        
+        
         </div> ) 
 
       })
@@ -34,8 +37,10 @@ console.log(this.state.articles);
     //   })
         return (
             <div>
-            <h2>this is the item </h2>
-            {article}
+            <h2>News Headline </h2>
+             {article} 
+            
+            
             </div>
         );
     }
